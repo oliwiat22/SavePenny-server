@@ -1,7 +1,20 @@
 package com.oliwiatrojniak.saveapenny.shoppinglist;
 
-final class Product {
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Entity
+@Table(name = "product")
+class Product {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   long id;
   String name;
   float price;

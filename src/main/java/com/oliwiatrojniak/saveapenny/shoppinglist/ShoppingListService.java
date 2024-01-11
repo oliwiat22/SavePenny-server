@@ -1,12 +1,21 @@
 package com.oliwiatrojniak.saveapenny.shoppinglist;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class ShoppingListService {
 
   ProductRepository productRepository;
+
+  @Autowired
+  public ShoppingListService(ProductRepository productRepository) {
+    this.productRepository = productRepository;
+  }
 
   ProductDto addToShoppingList(AddProduct newProduct){
 
