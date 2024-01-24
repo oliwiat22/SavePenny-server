@@ -1,6 +1,10 @@
 package com.oliwiatrojniak.saveapenny.shoppinglist;
 
-final class AddProduct {
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+public class AddProduct {
 
   String name;
   float price;
@@ -11,8 +15,6 @@ final class AddProduct {
     this.price = price;
     this.quantity = quantity;
   }
-
-
 
 
 }
