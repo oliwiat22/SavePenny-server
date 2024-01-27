@@ -25,7 +25,7 @@ public class CORSConfigurationBean {
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     CorsConfiguration config = new CorsConfiguration();
     config.setAllowCredentials(true);
-    config.setAllowedOrigins(singletonList("*"));
+    config.setAllowedOrigins(List.of("http://localhost:8081/", "http://localhost:5173/"));
     config.setAllowedMethods(singletonList("*"));
     config.setAllowedHeaders(singletonList("*"));
     config.setExposedHeaders(EXPOSED_HEADERS);

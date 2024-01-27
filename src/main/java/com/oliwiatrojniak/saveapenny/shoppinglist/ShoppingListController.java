@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/shopping-list")
 class ShoppingListController {
 

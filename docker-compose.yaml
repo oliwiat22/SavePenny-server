@@ -15,6 +15,8 @@ services:
       - SPRING_DATASOURCE_USERNAME=compose-postgres
       - SPRING_DATASOURCE_PASSWORD=compose-postgres
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    networks:
+      - my_network
 
   db:
     image: 'postgres:13.1-alpine'
@@ -26,12 +28,20 @@ services:
     environment:
       - POSTGRES_USER=compose-postgres
       - POSTGRES_PASSWORD=compose-postgres
+    networks:
+      - my_network
 
   front:
     image: frontsavepenny:latest
     container_name: front
     ports:
       - "8081:80"
+    networks:
+      - my_network
 
 volumes:
   postgres-data:
+
+networks:
+  my_network:
+    driver: bridge
